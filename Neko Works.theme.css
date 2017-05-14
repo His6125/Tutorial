@@ -1,3 +1,5 @@
+//META{"name":"Neko Para","description":"Neko Works","author":"His","version":"1.0"}*//
+
 {} /* Background */
 .app {
     background-image: url("https://i.imgur.com/LKiBqB9.jpg");
@@ -302,7 +304,7 @@ a:link {
 .private-channels,  
 .divider-red span, 
 .messages-wrapper, 
-#voice-connection {
+#rtc-connection {
     background: transparent !important;
 }
 .theme-dark .chat .title-wrap {
@@ -513,47 +515,47 @@ a:link {
 .tooltip.tooltip-top:after {
     border-top-color: #afafff;
 }
-#voice-connection .btn-group {
+#rtc-connection .btn-group {
     border: transparent;
     border-radius: 20px;
     background: transparent;
 }
-#voice-connection .btn {
+#rtc-connection .btn {
     background: transparent;
     box-shadow: none;
     border-radius: 20px;
 }
-#voice-connection {
+#rtc-connection {
     border-top: none;
     padding: 15px 20px 15px 18px !important;
 }
-#voice-connection .btn-info {
+#rtc-connection .btn-info {
     border-right: none;
 }
-#voice-connection .btn-disconnect:hover:after,
-#voice-connection .btn-info:hover:after {
+#rtc-connection .btn-disconnect:hover:after,
+#rtc-connection .btn-info:hover:after {
     background-color: #8282ff;
     border-radius: 20px;
 }
-#voice-connection .btn-info:after,
-#voice-connection .btn-disconnect:after {
+#rtc-connection .btn-info:after,
+#rtc-connection .btn-disconnect:after {
     opacity: 1;
 }
-#voice-connection .btn-info:after {
+#rtc-connection .btn-info:after {
     background-image: url(https://a.pomf.cat/hwtfeh.png);
     opacity: 1;
     background-size: 80%;
 }
-#voice-connection .btn-disconnect:after {
+#rtc-connection .btn-disconnect:after {
     background-image: url(https://a.pomf.cat/dfngik.png);
     opacity: 1;
     background-size: 80%;
 }
-#voice-connection .btn-info:hover:after {
+#rtc-connection .btn-info:hover:after {
     background-image: url(https://i.imgur.com/7PlilIx.png);
     opacity: 1;
 }
-#voice-connection .btn-disconnect:hover:after {
+#rtc-connection .btn-disconnect:hover:after {
     background-image: url(https://i.imgur.com/LAyMjfz.png);
     opacity: 1;
 }
@@ -583,7 +585,7 @@ a:link {
 }
 /* Channels */
 .guild-channels .channel-text .channel-name:before {
-    content: '§';
+    content: '禮';
     color: rgba(241, 241, 241, 0.61)!important;
 }
 .channel-textarea-inner {
@@ -669,7 +671,6 @@ a:link {
     background-size: 128px 128px;
     border-radius: 10%;
 }
-
 #user-profile-modal header {
     background-image: none;
     background-color: #afafff;
@@ -679,6 +680,12 @@ a:link {
 }
 #user-profile-modal .avatar-profile {
     border: 6px solid #afafff!important;
+}
+#user-profile-modal .avatar-wrapper {
+    background-color: transparent;
+}
+#user-profile-modal .header:after {
+        background-image: none;
 }
 #user-profile-modal footer {
     border-top: 1px solid #afafff;
@@ -704,15 +711,32 @@ a:link {
     background-color: #8282ff;
 }
 #user-profile-modal .header {
-    background-color: rgba(30, 26, 41, 0.78);
+    background-color: rgba(23, 23, 25, 0.75);
     background-image: none;
 }
+#user-profile-modal .header .header-info .header-info-inner .discord-tag {
+    color: #7289da;
+}
 #user-profile-modal .tab-bar-container {
-    background-color: rgba(30, 26, 41, 0.78);
+    background-color: rgba(23, 23, 25, 0.75);
     border-bottom: none;
+    border-top: 1px solid #afafff;
+}
+#user-profile-modal .tab-bar .tab-bar-item.selected {
+    border-bottom-color: #8282ff;
+    color: #7289da;
+}
+#user-profile-modal .tab-bar .tab-bar-item {
+    color: #fff;
 }
 #user-profile-modal .guilds .section .section-header {
     color: #e6e6fa;
+}
+#user-profile-modal .guilds .section+.section {
+    border-top: 1px solid #afafff;
+}
+#user-profile-modal .guilds .section .connected-accounts .connected-account {
+    border: 1px solid #afafff;
 }
 #user-profile-modal .sub-header {
     background: rgba(0, 0, 0, 0.78);
@@ -753,8 +777,11 @@ a:link {
     background: #8282ff !important;
 }
 .note textarea:focus {
-    background: #e6e6fa;
+    background: #afafff;
     border-radius: 8px;
+}
+.note textarea {
+    color: #fff;
 }
 
 
@@ -851,7 +878,7 @@ a:link {
 .add-friend-popout header input:focus {
     border-color: #8282ff;
 }
-#voice-connection-popout hr {
+voice-connection-popout hr {
     border: 1px solid #4C4C4C;
 }
 .option-popout .btn-item:hover {
@@ -1365,6 +1392,10 @@ a:link {
 
 
 /* Right Side */
+.theme-dark .channel-members-loading {
+    background-color: transparent;
+    opacity: 0 !important;
+}
 .guilds-wrapper .guilds .friends-icon:hover {
     background-color: #8282ff !important;
 }
@@ -2023,6 +2054,12 @@ a:link {
 .search-bar {
     box-shadow: inset 5px 0px 5px -6px rgba(0,0,0,0.5);
 }
+.search-bar .search-bar-inner {
+    background: #6b6bd6;
+}
+.search-bar-tag {
+    background: #afafff;
+}
 .badge {
     background-color: #afafff;
 }
@@ -2038,6 +2075,33 @@ search-bar-clear {
 .theme-dark #friends .friends-header .tab-bar .tab-bar-item .badge {
     background-color: #afafff;
     color: #fff;
+}
+.theme-dark .private-channel-recipients-invite .friend.selected,
+.theme-dark .private-channel-recipients-invite .friend:hover {
+    background: #8282ff;
+}
+.theme-dark .private-channel-recipients-invite .friend {
+    background: #8d7eda;
+}
+.search-popout .results-group .header {
+    color: #7289da;
+}
+.search-popout {
+    background-color: #afafff;
+}
+.search-popout .option:after,
+.search-popout .option.selected:after {
+    background: transparent;
+}
+.search-popout .search-option .filter,
+.search-popout .search-option .answer  {
+    color: #ffffff;
+}
+.search-popout .option .non-text {
+    color: #ffffff;
+}
+.search-popout .option.selected {
+    background-color: #9a9af7;
 }
  
 /* Pulses */
